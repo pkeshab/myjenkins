@@ -13,7 +13,6 @@ node {
     image.inside { 
      sh 'date > /tmp/test.txt'
      sh "cp /tmp/test.txt ${WORKSPACE}"
-     archiveArtifacts 'test.txt'
  }
     
   }
