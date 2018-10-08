@@ -1,13 +1,12 @@
 node {
   stage('scm checkout') {
-    git 'https://github.com/pkeshab/myjenkins.git'
+    git 'https://github.com/pkeshab/maven-simple.git'
           }
   
-  stage('print the sh command')
-    sh 'mvn -version'
+  echo " Changing to another stage in the pipeline"
   
-  stage('print the docker active containers')
-    sh 'docker ps'
+  stage('build the project')
+    sh 'mvn clean package'
   }
 
 
