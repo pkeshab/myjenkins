@@ -10,8 +10,7 @@ node {
   
   stage('upload the artifacts to nexus repo')
   
-    def path = sh '${WORKSPACE}'
-    echo '$path'
+ 
    
     
   
