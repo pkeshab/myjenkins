@@ -10,7 +10,10 @@ node {
   
   stage('upload the artifacts to nexus repo')
   
-nexusPublisher nexusInstanceId: '1123', nexusRepositoryId: 'myfirstapplicationnexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '${WORKSPACE}/target/*.war']], mavenCoordinate: [artifactId: 'hello-springboot', groupId: 'org.springframework.boot', packaging: 'war', version: '1.3.5.RELEASE']]]
+    sh 'pwd > workspace'
+    workspace = readFile('workspace').trim()
+    
+  
  }
     
 
