@@ -7,7 +7,7 @@ node {
     sh 'mvn -version'
   
   stage('print the docker active containers')
-    sh 'docker ps
+    sh 'docker ps'
   }
 
 
