@@ -10,7 +10,8 @@ node {
   
   stage('upload the artifacts to nexus repo')
   
-    sh 'ls ${WORKSPACE}'
+    def path = sh 'ls ${WORKSPACE}'
+   
     
   
  }
