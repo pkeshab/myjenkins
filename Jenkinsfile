@@ -10,8 +10,7 @@ node {
   
   stage('upload the artifacts to nexus repo')
   
-    sh 'pwd > workspace'
-    workspace = readFile('workspace').trim()
+    sh 'cat ${WORKSPACE}'
     
   
  }
