@@ -7,6 +7,11 @@ node {
   
   stage('build the project')
     sh 'mvn clean package'
+  
+  stage('archive the artifacts')
+    archiveArtifacts artifacts: '\'myfirstspring/*.zip\'', onlyIfSuccessful: true
+  
+  
   }
 
 
