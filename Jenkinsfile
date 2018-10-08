@@ -1,5 +1,8 @@
 nodes {
-  stages('scm checkout')
+  stages('scm checkout') {
+    steps { sh 'mvn -version'
+          }
+  }
 
 }
 
