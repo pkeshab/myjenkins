@@ -1,0 +1,5 @@
+nodes {
+  stages('scm checkout')
+
+}
+
