@@ -11,7 +11,7 @@ node {
   stage('archive the artifacts')
    def image = docker.image("sonatype/nexus3")
     image.inside { 
-     sh "cp ${WORKSPACE}/target/*.war /opt"
+     sh "cp ${WORKSPACE}/target/*.war /home"
  }
     
   }
