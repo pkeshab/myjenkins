@@ -5,6 +5,9 @@ node {
   
   stage('print the sh command')
     sh 'mvn -version'
+  
+  stage('print the docker active containers')
+    sh 'docker ps
   }
 
 
