@@ -8,10 +8,10 @@ node {
   stage('build the project')
     sh 'mvn clean package'
   
-  stage('archive the artifacts')
-   def image = docker.image("sonatype/nexus3")
-    image.inside { 
-     sh "cp ${WORKSPACE}/target/*.war /home"
+  stage('upload the artifacts to nexus repo')
+  
+    nexusPublisher nexusInstanceId: '1123', nexusRepositoryId: 'myfirstapplicationnexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '$(workspace)/pipeline/target/*.war']], mavenCoordinate: [artifactId: 'hello-springboot', groupId: 'org.springframework.boot', packaging: 'war', version: '1.3.5.RELEASE']]]
+  
  }
     
   }
