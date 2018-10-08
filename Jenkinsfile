@@ -9,8 +9,13 @@ node {
     sh 'mvn clean package'
   
   stage('archive the artifacts')
-   
-    archiveArtifacts '\'/var/jenkins_home/workspace/pipeline/target/hello-springboot-1.3.5.RELEASE.war\''
+   def image = docker.image("sonatype/nexus3")
+    image.inside { 
+     sh 'date > /tmp/test.txt'
+     sh "cp /tmp/test.txt ${WORKSPACE}"
+     archiveArtifacts 'test.txt'
+ }
+    
   }
 
 
