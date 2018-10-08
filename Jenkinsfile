@@ -1,8 +1,8 @@
-nodes {
+node {
   stages('scm checkout') {
-    steps { sh 'mvn -version'
+    git 'https://github.com/pkeshab/myjenkins.git'
           }
   }
 
-}
+
 
