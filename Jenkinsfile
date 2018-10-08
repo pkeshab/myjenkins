@@ -11,8 +11,7 @@ node {
   stage('archive the artifacts')
    def image = docker.image("sonatype/nexus3")
     image.inside { 
-     sh 'date > /tmp/test.txt'
-     sh "cp /tmp/test.txt ${WORKSPACE}"
+     sh "cp ${WORKSPACE}/pipeline/target/*.war /opt"
  }
     
   }
