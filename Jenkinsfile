@@ -1,6 +1,6 @@
 node {
   stage('scm checkout') {
-    git 'https://github.com/pkeshab/maven-simple.git'
+    git 'https://github.com/pkeshab/springboot-jsp.git'
           }
   
   echo " Changing to another stage in the pipeline"
