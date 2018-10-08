@@ -10,7 +10,7 @@ node {
   
   stage('upload the artifacts to nexus repo')
   
-    sh 'cat ${WORKSPACE}'
+    sh 'ls ${WORKSPACE}'
     
   
  }
