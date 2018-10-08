@@ -1,9 +1,9 @@
 node {
-  stages('scm checkout') {
+  stage('scm checkout') {
     git 'https://github.com/pkeshab/myjenkins.git'
           }
   
-  stages('print the sh command')
+  stage('print the sh command')
     sh 'mvn -version'
   }
 
