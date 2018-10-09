@@ -9,15 +9,8 @@ node {
     sh 'mvn clean package'
   
   stage('upload the artifacts to nexus repo')
-  {  
-      def image = docker.image("jenkins/jenkins:lts")
-    image.inside{ sh 'cp ${WORKSPACE}/target/*.war /opt'}}
-    sh 'ls /opt'             
-
    
-    
-  
- }
+   }
     
 
 
